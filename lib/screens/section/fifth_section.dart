@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ui_design_tutorial_food/main.dart';
+// import 'package:ui_design_tutorial_food/main.dart';
 import 'package:ui_design_tutorial_food/modals/chefs.dart';
 import 'package:ui_design_tutorial_food/modals/screen_offset.dart';
 import 'package:ui_design_tutorial_food/widgets/chef_card.dart';

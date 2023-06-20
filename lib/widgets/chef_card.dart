@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ui_design_tutorial_food/main.dart';
+// import 'package:ui_design_tutorial_food/main.dart';
 import 'package:ui_design_tutorial_food/modals/screen_offset.dart';
 
 class ChefCard extends StatefulWidget {
@@ -30,7 +30,7 @@ class _ChefCardState extends State<ChefCard> with TickerProviderStateMixin {
     controller = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 1000));
 
-    animation = Tween(begin: 220.0, end: 0.0).animate(CurvedAnimation(
+    animation = Tween(begin: 250.0, end: 0.0).animate(CurvedAnimation(
         parent: controller,
         curve: const Interval(0.0, 1.0, curve: Curves.easeOut)));
     super.initState();
@@ -40,13 +40,13 @@ class _ChefCardState extends State<ChefCard> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return BlocBuilder<DisplayOffset, ScrollOffset>(
         buildWhen: (previous, current) {
-      if (current.scrollOffsetValue > 2500) {
+      if (current.scrollOffsetValue > 3400) {
         return true;
       } else {
         return false;
       }
     }, builder: (context, state) {
-      if (state.scrollOffsetValue > 3200) {
+      if (state.scrollOffsetValue > 3600) {
         controller.forward();
       } else {
         controller.reverse();
@@ -55,15 +55,15 @@ class _ChefCardState extends State<ChefCard> with TickerProviderStateMixin {
           animation: animation,
           builder: (context, child) {
             return Container(
-              height: 330.0,
-              width: 220.0,
-              margin: const EdgeInsets.all(12.0),
+              height: 355.0,
+              width: 250.0,
+              margin: const EdgeInsets.all(25.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 280.0,
-                    width: 220.0,
+                    height: 300.0,
+                    width: 250.0,
                     child: Stack(
                       children: [
                         Padding(
@@ -71,13 +71,15 @@ class _ChefCardState extends State<ChefCard> with TickerProviderStateMixin {
                           child: Image.network(
                             widget.image,
                             fit: BoxFit.cover,
+                            height: 300.0,
+                            width: 250.0,
                           ),
                         ),
                         Align(
                           alignment: Alignment(
                               (widget.index % 2 == 1) ? 1.0 : -1.0, 1.0),
                           child: Container(
-                            height: 280.0,
+                            height: 300.0,
                             width: animation.value,
                             color: Colors.white,
                           ),
@@ -91,7 +93,7 @@ class _ChefCardState extends State<ChefCard> with TickerProviderStateMixin {
                   Text(
                     widget.name,
                     style: GoogleFonts.quicksand(
-                      fontSize: 14.0,
+                      fontSize: 20.0,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -101,7 +103,7 @@ class _ChefCardState extends State<ChefCard> with TickerProviderStateMixin {
                   Text(
                     widget.designation,
                     style: GoogleFonts.quicksand(
-                      fontSize: 12.0,
+                      fontSize: 16.0,
                       fontWeight: FontWeight.w500,
                       color: Colors.black54,
                     ),

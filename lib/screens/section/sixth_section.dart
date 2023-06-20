@@ -44,7 +44,7 @@ class _SixthSectionState extends State<SixthSection> {
                 Text(
                   'Subscribe Now',
                   style: GoogleFonts.quicksand(
-                    fontSize: 14.0,
+                    fontSize: 18.0,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -89,7 +89,7 @@ class _SixthSectionState extends State<SixthSection> {
                   child: TextButton(
                     style: TextButton.styleFrom(
                       backgroundColor: primaryColor,
-                      primary: Colors.white,
+                      foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(100.0),
                       ),

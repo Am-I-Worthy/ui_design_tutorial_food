@@ -89,8 +89,8 @@ class _ItemCardState extends State<ItemCard> with TickerProviderStateMixin {
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 375),
-        height: 170.0,
-        width: 420.0,
+        height: 180.0,
+        width: 520.0,
         decoration: BoxDecoration(
           // color: Colors.white,
           borderRadius: BorderRadius.circular(10.0),
@@ -117,13 +117,13 @@ class _ItemCardState extends State<ItemCard> with TickerProviderStateMixin {
             onTap: () {},
             child: BlocBuilder<DisplayOffset, ScrollOffset>(
                 buildWhen: (previous, current) {
-              if (current.scrollOffsetValue > 900) {
+              if (current.scrollOffsetValue > 1000) {
                 return true;
               } else {
                 return false;
               }
             }, builder: (context, state) {
-              if (state.scrollOffsetValue >= (1000 + (widget.index * 100))) {
+              if (state.scrollOffsetValue >= (1100 + (widget.index * 100))) {
                 controller.forward();
               } else {
                 controller.reverse();
@@ -134,8 +134,8 @@ class _ItemCardState extends State<ItemCard> with TickerProviderStateMixin {
                     return Row(
                       children: [
                         SizedBox(
-                          height: 170.0,
-                          width: 170.0,
+                          height: 180.0,
+                          width: 180.0,
                           child: Center(
                             child: FadeTransition(
                               opacity: imageOpacity,
@@ -148,6 +148,7 @@ class _ItemCardState extends State<ItemCard> with TickerProviderStateMixin {
                                     widget.image,
                                     fit: BoxFit.cover,
                                     filterQuality: FilterQuality.medium,
+                                    scale: 0.5,
                                   ),
                                 ),
                               ),
@@ -168,7 +169,7 @@ class _ItemCardState extends State<ItemCard> with TickerProviderStateMixin {
                                   widget.title,
                                   style: GoogleFonts.quicksand(
                                     fontWeight: FontWeight.w700,
-                                    fontSize: 14.0,
+                                    fontSize: 20.0,
                                   ),
                                 ),
                               ),
@@ -178,7 +179,7 @@ class _ItemCardState extends State<ItemCard> with TickerProviderStateMixin {
                                   widget.subtitle,
                                   style: GoogleFonts.quicksand(
                                     fontWeight: FontWeight.w500,
-                                    fontSize: 10.0,
+                                    fontSize: 15.0,
                                     color: Colors.black38,
                                   ),
                                 ),
@@ -192,7 +193,7 @@ class _ItemCardState extends State<ItemCard> with TickerProviderStateMixin {
                                   widget.description,
                                   style: GoogleFonts.quicksand(
                                     fontWeight: FontWeight.w600,
-                                    fontSize: 12.0,
+                                    fontSize: 16.0,
                                     color: Colors.black54,
                                   ),
                                 ),
@@ -206,7 +207,7 @@ class _ItemCardState extends State<ItemCard> with TickerProviderStateMixin {
                                   widget.price,
                                   style: GoogleFonts.quicksand(
                                     fontWeight: FontWeight.w700,
-                                    fontSize: 14.0,
+                                    fontSize: 18.0,
                                     color: primaryColor,
                                   ),
                                 ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 class TextReveal extends StatefulWidget {
   final double maxHeight;
@@ -30,14 +30,12 @@ class _TextRevealState extends State<TextReveal> with TickerProviderStateMixin {
     controller = widget.controller;
 
     textRevealAnimation = widget.textRevealAnimation ??
-        Tween<double>(begin: 100.0, end: 0.0).animate(CurvedAnimation(
-            parent: controller,
-            curve: const Interval(0.0, 1.0, curve: Curves.easeOut)));
+        Tween<double>(begin: 100.0, end: 0.0).animate(
+            CurvedAnimation(parent: controller, curve: Curves.easeOut));
 
     textOpacityAnimation = widget.textOpacityAnimation ??
-        Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: controller,
-            curve: const Interval(0.0, 1.0, curve: Curves.easeOut)));
+        Tween<double>(begin: 0.0, end: 1.0).animate(
+            CurvedAnimation(parent: controller, curve: Curves.easeOut));
 
     super.initState();
   }

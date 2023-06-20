@@ -1,9 +1,9 @@
-import 'dart:async';
+// import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ui_design_tutorial_food/main.dart';
+// import 'package:ui_design_tutorial_food/main.dart';
 import 'package:ui_design_tutorial_food/modals/items.dart';
 import 'package:ui_design_tutorial_food/modals/screen_offset.dart';
 import 'package:ui_design_tutorial_food/widgets/item_card.dart';
@@ -53,11 +53,11 @@ class _SecondSectionState extends State<SecondSection>
             }
             return TextReveal(
               controller: controller,
-              maxHeight: 55.0,
+              maxHeight: 70.0,
               child: Text(
                 'Dish of The Day',
                 style: GoogleFonts.quicksand(
-                  fontSize: 45.0,
+                  fontSize: 55.0,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -65,7 +65,7 @@ class _SecondSectionState extends State<SecondSection>
           },
         ),
         const SizedBox(
-          height: 50.0,
+          height: 100.0,
         ),
         Container(
           padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 50.0),
@@ -91,7 +91,7 @@ class _SecondSectionState extends State<SecondSection>
           ),
         ),
         const SizedBox(
-          height: 50.0,
+          height: 100.0,
         ),
         TextButton(
           style: TextButton.styleFrom(
@@ -100,7 +100,7 @@ class _SecondSectionState extends State<SecondSection>
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50.0),
             ),
-            primary: Colors.white,
+            foregroundColor: Colors.white,
             backgroundColor: const Color(0xFFBE133C),
           ),
           onPressed: () {},
@@ -108,6 +108,7 @@ class _SecondSectionState extends State<SecondSection>
             'View More',
             style: GoogleFonts.quicksand(
               fontWeight: FontWeight.w600,
+              fontSize: 20.0,
             ),
           ),
         ),

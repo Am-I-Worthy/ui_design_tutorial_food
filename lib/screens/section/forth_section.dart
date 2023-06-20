@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ui_design_tutorial_food/main.dart';
+// import 'package:ui_design_tutorial_food/main.dart';
 import 'package:ui_design_tutorial_food/modals/screen_offset.dart';
 import 'package:ui_design_tutorial_food/widgets/text_reveal.dart';
 
@@ -65,13 +65,13 @@ class _FourthSectionState extends State<FourthSection>
   Widget build(BuildContext context) {
     return BlocBuilder<DisplayOffset, ScrollOffset>(
         buildWhen: (previous, current) {
-      if (current.scrollOffsetValue > 2200) {
+      if (current.scrollOffsetValue > 2800) {
         return true;
       } else {
         return false;
       }
     }, builder: (context, state) {
-      if (state.scrollOffsetValue > 2500) {
+      if (state.scrollOffsetValue > 2900) {
         controller.forward();
       } else {
         controller.reverse();
@@ -90,7 +90,7 @@ class _FourthSectionState extends State<FourthSection>
                     width: 400.0,
                     padding: const EdgeInsets.all(1.0),
                     child: Image.network(
-                      'https://images.unsplash.com/photo-1476887334197-56adbf254e1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80',
+                      'https://images.unsplash.com/photo-1476887334197-56adbf254e1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -189,7 +189,7 @@ class _FourthSectionState extends State<FourthSection>
                                     children: [
                                       Expanded(
                                         child: Image.network(
-                                          'https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+                                          'https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80',
                                           fit: BoxFit.cover,
                                         ),
                                       ),
@@ -198,7 +198,7 @@ class _FourthSectionState extends State<FourthSection>
                                       ),
                                       Expanded(
                                         child: Image.network(
-                                          'https://images.unsplash.com/photo-1570145820404-cf22b115b06f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80',
+                                          'https://images.unsplash.com/photo-1570145820404-cf22b115b06f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80',
                                           fit: BoxFit.cover,
                                         ),
                                       ),

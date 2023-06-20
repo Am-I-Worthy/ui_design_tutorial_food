@@ -16,7 +16,7 @@ class FooterLink extends StatelessWidget {
         Text(
           title,
           style: GoogleFonts.quicksand(
-            fontSize: 14.0,
+            fontSize: 20.0,
             fontWeight: FontWeight.w700,
           ),
         ),
@@ -32,7 +32,7 @@ class FooterLink extends StatelessWidget {
                   child: Text(
                     params,
                     style: GoogleFonts.quicksand(
-                      fontSize: 12.0,
+                      fontSize: 16.0,
                       fontWeight: FontWeight.w700,
                       color: Colors.black45,
                     ),

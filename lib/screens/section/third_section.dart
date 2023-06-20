@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ui_design_tutorial_food/main.dart';
+// import 'package:ui_design_tutorial_food/main.dart';
 import 'package:ui_design_tutorial_food/modals/constants.dart';
 import 'package:ui_design_tutorial_food/modals/infos.dart';
 import 'package:ui_design_tutorial_food/modals/screen_offset.dart';
@@ -35,7 +35,7 @@ class _ThirdSectionState extends State<ThirdSection>
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 450,
+      height: 510,
       color: backgroundColor,
       child: Column(
         children: [
@@ -44,13 +44,13 @@ class _ThirdSectionState extends State<ThirdSection>
           ),
           BlocBuilder<DisplayOffset, ScrollOffset>(
               buildWhen: (previous, current) {
-            if (previous.scrollOffsetValue >= 1800) {
+            if (previous.scrollOffsetValue >= 1900) {
               return true;
             } else {
               return false;
             }
           }, builder: (context, state) {
-            if (state.scrollOffsetValue > 2000.0) {
+            if (state.scrollOffsetValue > 2100.0) {
               controller.forward();
             } else {
               controller.reverse();
