@@ -44,7 +44,7 @@ class _ThirdSectionState extends State<ThirdSection>
           ),
           BlocBuilder<DisplayOffset, ScrollOffset>(
               buildWhen: (previous, current) {
-            if (previous.scrollOffsetValue >= 1900) {
+            if ((current.scrollOffsetValue >= 1900 && current.scrollOffsetValue <= 2300) || controller.isAnimating) {
               return true;
             } else {
               return false;
@@ -74,9 +74,8 @@ class _ThirdSectionState extends State<ThirdSection>
               mainAxisAlignment: MainAxisAlignment.center,
               children: infos
                   .map((info) => InfoCard(
-                      icon: info.iconData,
-                      title: info.title,
-                      description: info.description))
+                        info: info,
+                      ))
                   .toList()),
           const SizedBox(
             height: 50.0,

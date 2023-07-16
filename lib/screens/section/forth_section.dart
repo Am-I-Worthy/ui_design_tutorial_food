@@ -17,7 +17,6 @@ class _FourthSectionState extends State<FourthSection>
   late AnimationController controller;
   late Animation<double> imageRevealAnimation;
   late Animation<double> textRevealAnimation;
-  late Animation<double> textOpacityAnimation;
   late Animation<double> subTextOpacityAnimation;
   late Animation<double> subImageRevealAnimation;
 
@@ -39,11 +38,6 @@ class _FourthSectionState extends State<FourthSection>
             curve: const Interval(0.0, 0.40, curve: Curves.easeOut)));
 
     textRevealAnimation = Tween<double>(begin: 70.0, end: 0.0).animate(
-        CurvedAnimation(
-            parent: controller,
-            curve: const Interval(0.30, 0.60, curve: Curves.easeOut)));
-
-    textOpacityAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
         CurvedAnimation(
             parent: controller,
             curve: const Interval(0.30, 0.60, curve: Curves.easeOut)));

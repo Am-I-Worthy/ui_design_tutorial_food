@@ -39,14 +39,16 @@ class _SecondSectionState extends State<SecondSection>
       children: [
         BlocBuilder<DisplayOffset, ScrollOffset>(
           buildWhen: (previous, current) {
-            if (previous.scrollOffsetValue > 800) {
+            if ((current.scrollOffsetValue >= 900 &&
+                    current.scrollOffsetValue <= 1300) ||
+                controller.isAnimating) {
               return true;
             } else {
               return false;
             }
           },
           builder: (context, state) {
-            if (state.scrollOffsetValue > 800.0) {
+            if (state.scrollOffsetValue > 1100.0) {
               controller.forward();
             } else {
               controller.reverse();

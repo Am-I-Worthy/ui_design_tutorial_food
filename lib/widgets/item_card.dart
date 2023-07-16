@@ -92,7 +92,6 @@ class _ItemCardState extends State<ItemCard> with TickerProviderStateMixin {
         height: 180.0,
         width: 520.0,
         decoration: BoxDecoration(
-          // color: Colors.white,
           borderRadius: BorderRadius.circular(10.0),
           boxShadow: isHovered
               ? [
@@ -117,7 +116,9 @@ class _ItemCardState extends State<ItemCard> with TickerProviderStateMixin {
             onTap: () {},
             child: BlocBuilder<DisplayOffset, ScrollOffset>(
                 buildWhen: (previous, current) {
-              if (current.scrollOffsetValue > 1000) {
+              if ((current.scrollOffsetValue >= 1000 &&
+                      current.scrollOffsetValue <= 1950) ||
+                  controller.isAnimating) {
                 return true;
               } else {
                 return false;

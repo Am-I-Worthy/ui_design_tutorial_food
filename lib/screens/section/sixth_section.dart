@@ -25,8 +25,7 @@ class _SixthSectionState extends State<SixthSection> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: footer
-                  .map((footer) => FooterLink(
-                      title: footer.title, parameters: footer.parameters))
+                  .map((footer) => FooterLink(footer: footer,))
                   .toList(),
             ),
           ),

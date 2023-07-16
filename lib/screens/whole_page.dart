@@ -30,20 +30,13 @@ class _WholePageState extends State<WholePage> {
           (MediaQuery.of(context).size.height + controller.position.pixels)
               .toInt());
     });
-
-    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
-      context
-          .read<DisplayOffset>()
-          .changeDisplayOffset(MediaQuery.of(context).size.height.toInt());
-    });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      controller: controller,
-      // physics: const NeverScrollableScrollPhysics(),
+      controller: controller, 
       child: const Column(
         children:  [
           FirstSection(),

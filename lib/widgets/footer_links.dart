@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ui_design_tutorial_food/modals/footer.dart';
 
 class FooterLink extends StatelessWidget {
-  final String title;
-  final List<String> parameters;
-  const FooterLink({Key? key, required this.title, required this.parameters})
+  final Footer footer;
+  const FooterLink({Key? key, required this.footer})
       : super(key: key);
 
   @override
@@ -14,7 +14,7 @@ class FooterLink extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          title,
+          footer.title,
           style: GoogleFonts.quicksand(
             fontSize: 20.0,
             fontWeight: FontWeight.w700,
@@ -25,7 +25,7 @@ class FooterLink extends StatelessWidget {
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: parameters
+          children: footer.parameters
               .map(
                 (params) => Padding(
                   padding: const EdgeInsets.symmetric(vertical: 2.0),

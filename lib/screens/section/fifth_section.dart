@@ -68,10 +68,7 @@ class _FifthSectionState extends State<FifthSection>
           mainAxisAlignment: MainAxisAlignment.center,
           children: chefs
               .map((chef) => ChefCard(
-                    image: chef.image,
-                    name: chef.name,
-                    designation: chef.designation,
-                    index: chefs.indexOf(chef) + 1,
+                    chef: chef,
                   ))
               .toList(),
         ),

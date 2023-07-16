@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ui_design_tutorial_food/modals/chefs.dart';
 // import 'package:ui_design_tutorial_food/main.dart';
 import 'package:ui_design_tutorial_food/modals/screen_offset.dart';
 
 class ChefCard extends StatefulWidget {
-  final String image;
-  final String name;
-  final String designation;
-  final int index;
+  final Chef chef;
   const ChefCard({
     Key? key,
-    required this.image,
-    required this.name,
-    required this.designation,
-    required this.index,
+    required this.chef,
   }) : super(key: key);
 
   @override
@@ -69,7 +64,7 @@ class _ChefCardState extends State<ChefCard> with TickerProviderStateMixin {
                         Padding(
                           padding: const EdgeInsets.all(1.0),
                           child: Image.network(
-                            widget.image,
+                            widget.chef.image,
                             fit: BoxFit.cover,
                             height: 300.0,
                             width: 250.0,
@@ -77,7 +72,7 @@ class _ChefCardState extends State<ChefCard> with TickerProviderStateMixin {
                         ),
                         Align(
                           alignment: Alignment(
-                              (widget.index % 2 == 1) ? 1.0 : -1.0, 1.0),
+                              (widget.chef.index % 2 == 1) ? 1.0 : -1.0, 1.0),
                           child: Container(
                             height: 300.0,
                             width: animation.value,
@@ -91,7 +86,7 @@ class _ChefCardState extends State<ChefCard> with TickerProviderStateMixin {
                     height: 8.0,
                   ),
                   Text(
-                    widget.name,
+                    widget.chef.name,
                     style: GoogleFonts.quicksand(
                       fontSize: 20.0,
                       fontWeight: FontWeight.w600,
@@ -101,7 +96,7 @@ class _ChefCardState extends State<ChefCard> with TickerProviderStateMixin {
                     height: 2.0,
                   ),
                   Text(
-                    widget.designation,
+                    widget.chef.designation,
                     style: GoogleFonts.quicksand(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w500,

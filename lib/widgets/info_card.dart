@@ -3,17 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'package:ui_design_tutorial_food/main.dart';
 import 'package:ui_design_tutorial_food/modals/constants.dart';
+import 'package:ui_design_tutorial_food/modals/infos.dart';
 import 'package:ui_design_tutorial_food/modals/screen_offset.dart';
 
 class InfoCard extends StatelessWidget {
-  final IconData icon;
-  final String title;
-  final String description;
+  final Info info;
   const InfoCard({
     Key? key,
-    required this.icon,
-    required this.title,
-    required this.description,
+    required this.info,
   }) : super(key: key);
 
   @override
@@ -34,7 +31,7 @@ class InfoCard extends StatelessWidget {
         alignment: Alignment.center,
         reverseDuration: const Duration(milliseconds: 375),
         firstCurve: Curves.easeOut,
-        secondCurve: Curves.easeIn,
+        secondCurve: Curves.easeOut,
         firstChild: Container(
           height: 260.0,
           width: 220.0,
@@ -61,7 +58,7 @@ class InfoCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(100.0),
                   ),
                   child: Icon(
-                    icon,
+                    info.iconData,
                     color: Colors.white,
                   ),
                 ),
@@ -69,7 +66,7 @@ class InfoCard extends StatelessWidget {
                   height: 15.0,
                 ),
                 Text(
-                  title,
+                  info.title,
                   style: GoogleFonts.quicksand(
                     fontWeight: FontWeight.w700,
                     fontSize: 20.0,
@@ -79,7 +76,7 @@ class InfoCard extends StatelessWidget {
                   height: 10.0,
                 ),
                 Text(
-                  description,
+                  info.description,
                   style: GoogleFonts.quicksand(
                     fontWeight: FontWeight.w500,
                     fontSize: 14.0,
